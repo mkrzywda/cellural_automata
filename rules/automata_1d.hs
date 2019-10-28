@@ -1,5 +1,10 @@
+-- CA 1D
+--
+
 import Data.Array (listArray, (!), bounds, elems)
- 
+--http://hackage.haskell.org/package/array-0.5.4.0/docs/Data-Array.html
+--
+
 step rule a = listArray (l,r) res
   where (l,r) = bounds a
         res = [rule (a!r)     (a!l) (a!(l+1)) ] ++
@@ -15,7 +20,11 @@ initial n = listArray (0,n-1) . center . padRight n
     padRight n lst = take n $ lst ++ repeat 0
     center = take n . drop (n `div` 2+1) . cycle
 
-displayCA n rule init = mapM_ putStrLn $ take n result
+-- (<$>) :: Functor f => (a->b) -> f a -> f b
+-- fmap :: (a -> b) -> f a -> f b
+
+
+display1DCA n rule init = mapM_ putStrLn $ take n result
   where result = fmap display . elems <$> runCA rule init
         display 0 = ' '
         display 1 = '#'

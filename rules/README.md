@@ -1,3 +1,3 @@
 # Create program to generate
-    http://mathworld.wolfram.com/ElementaryCellularAutomaton.html
+rules:   http://mathworld.wolfram.com/ElementaryCellularAutomaton.html
 

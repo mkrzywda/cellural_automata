@@ -18,4 +18,4 @@ initial n = listArray (0,n-1) . center . padRight n
 displayCA n rule init = mapM_ putStrLn $ take n result
   where result = fmap display . elems <$> runCA rule init
         display 0 = ' '
-        display 1 = '*'
+        display 1 = '#'

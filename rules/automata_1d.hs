@@ -27,4 +27,4 @@ initial n = listArray (0,n-1) . center . padRight n
 display1DCA n rules init = mapM_ putStrLn $ take n result
   where result = fmap display . elems <$> runCA rules init
         display 0 = ' '
-        display 1 = '#'
+        display 1 = 'λ'
